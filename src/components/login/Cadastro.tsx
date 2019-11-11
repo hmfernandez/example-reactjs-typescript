@@ -24,7 +24,6 @@ export class Cadastro extends React.Component<IProps> {
         
     // NÃO SE DEVE VALIDAR/PERSISITIR LOGIN/CADASTRO DESSA FORMA.
     // Logica utilizada apaenas para fins de teste, possibilitando o fluxo da navegacao. 
-    console.log('USUARIO', this.dadosForm);
     let salt = bcryptjs.genSaltSync(10);
     let hash = bcryptjs.hashSync(this.dadosForm['password'], salt);
     localStorage.setItem('auth-token', `${this.dadosForm['username']}_|_${hash}`);
